@@ -123,10 +123,18 @@
   @media (max-width:800px){.gallery{grid-template-columns:1fr;}figure.g-item.g-wide{grid-column:span 1;}}
 
   .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .info-grid-4{grid-template-columns:repeat(4,1fr);}
   .info-card{background:var(--white);border:1px solid var(--line);padding:24px;}
   .info-card .num{font-family:'Source Serif 4',serif;font-size:2rem;color:var(--guinda);}
   .info-card .cap{font-size:.85rem;color:#5a4a4c;margin-top:6px;}
-  @media (max-width:760px){.info-grid{grid-template-columns:1fr;}}
+  @media (max-width:900px){.info-grid-4{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:760px){.info-grid{grid-template-columns:1fr;}.info-grid-4{grid-template-columns:1fr;}}
+
+  .chips-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px;}
+  .chip-group h4{font-family:'Source Serif 4',serif;font-size:1rem;color:var(--guinda-deep);margin:0 0 12px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--paper-deep);border:1px solid var(--line);padding:6px 12px;font-size:.8rem;color:var(--ink);border-radius:2px;}
+  @media (max-width:760px){.chips-grid{grid-template-columns:1fr;}}
 
   .registro{background:var(--guinda);color:var(--white);text-align:center;padding:60px 24px;}
   .registro h2{color:var(--white);font-size:1.9rem;max-width:28ch;margin:0 auto;}
@@ -208,7 +216,7 @@
         </div>
         <div class="meta-item">
           <div class="label">Entrada</div>
-          <div class="value">Gratuita · cupo limitado (30 personas por dia)</div>
+          <div class="value">Gratuita · cupo limitado (30 personas por día)</div>
         </div>
       </div>
       <div class="cta-row">
@@ -369,20 +377,50 @@
     <div class="wrap">
       <div class="section-head">
         <div class="tag">El acervo en cifras</div>
-        <h2>Lo que resguarda el Archivo</h2>
+        <h2>Lo que resguardan el Archivo y la Biblioteca</h2>
       </div>
-      <div class="info-grid">
-        <div class="info-card">
-          <div class="num">100</div>
-          <div class="cap">años de la Comisión Nacional de Irrigación (1926–2026), eje conmemorativo del ciclo.</div>
-        </div>
+      <div class="info-grid info-grid-4">
         <div class="info-card">
           <div class="num">240 mil</div>
-          <div class="cap">expedientes de archivo, organizados en siete fondos documentales (1558–2015).</div>
+          <div class="cap">expedientes de archivo —manuscritos, mecanoescritos, mapas, planos, croquis y fotografías— sobre los usos sociales del agua en México (1558–2025).</div>
         </div>
         <div class="info-card">
-          <div class="num">30</div>
-          <div class="cap">personas por sesión — cupo limitado, entrada gratuita con registro previo.</div>
+          <div class="num">30 mil</div>
+          <div class="cap">referencias bibliográficas y hemerográficas de la Biblioteca Central del Agua, desde la Comisión Nacional de Irrigación hasta la actual CONAGUA.</div>
+        </div>
+        <div class="info-card">
+          <div class="num">1910</div>
+          <div class="cap">año de inauguración del inmueble histórico que hoy alberga al AHyBCA, diseñado por el arquitecto Carlos Herrera para las fiestas del centenario de la Independencia.</div>
+        </div>
+        <div class="info-card">
+          <div class="num">1994</div>
+          <div class="cap">año en que se incorpora el acervo del Archivo Histórico a este inmueble; la Biblioteca Central del Agua se instaló aquí en 1986.</div>
+        </div>
+      </div>
+
+      <div class="chips-grid">
+        <div class="chip-group">
+          <h4>Fondos documentales del Archivo Histórico</h4>
+          <div class="chip-row">
+            <span class="chip">Aprovechamientos Superficiales</span>
+            <span class="chip">Aguas Nacionales</span>
+            <span class="chip">Consultivo Técnico</span>
+            <span class="chip">Comisión del río Grijalva</span>
+            <span class="chip">Comisión del río Papaloapan</span>
+            <span class="chip">Colección Fotográfica</span>
+            <span class="chip">Infraestructura Hidráulica</span>
+          </div>
+        </div>
+        <div class="chip-group">
+          <h4>Colecciones de la Biblioteca Central del Agua</h4>
+          <div class="chip-row">
+            <span class="chip">General</span>
+            <span class="chip">Referencia</span>
+            <span class="chip">Especiales (bibliotecas de ingenieros)</span>
+            <span class="chip">Hemeroteca</span>
+            <span class="chip">Mapoteca</span>
+            <span class="chip">Estudios y Proyectos</span>
+          </div>
         </div>
       </div>
     </div>
@@ -394,7 +432,7 @@
       <h2>Reserva tu lugar</h2>
       <p>El cupo es limitado a 30 personas por sesión. Regístrate a través del formulario oficial para confirmar tu asistencia a la apertura del 23 de octubre o a cualquiera de las pláticas semanales.</p>
       <!-- TODO: reemplazar por la liga real del Google Form -->
-      <a class="btn btn-primary" href="https://forms.gle/B3Uk7TJYWKas6BDA6 " target="_blank" rel="noopener">Ir al formulario de registro</a>
+      <a class="btn btn-primary" href="https://forms.gle/B3Uk7TJYWKas6BDA6" target="_blank" rel="noopener">Ir al formulario de registro</a>
       <div class="fineprint">Evento gratuito. Se solicita presentar una identificación oficial vigente; no se permite el ingreso con mochilas.</div>
       <div class="contact-line">Dudas: olga.manuel@conagua.gob.mx · 55 5174 4000 ext. 2813 (9:00–14:00 h)</div>
     </div>
