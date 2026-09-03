@@ -130,6 +130,12 @@
   @media (max-width:900px){.info-grid-4{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:760px){.info-grid{grid-template-columns:1fr;}.info-grid-4{grid-template-columns:1fr;}}
 
+  .cifras-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .cifra-item{margin:0;background:var(--white);border:1px solid var(--line);padding:10px;}
+  .cifra-item img{width:100%;height:auto;display:block;}
+  @media (max-width:900px){.cifras-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.cifras-grid{grid-template-columns:1fr;}}
+
   .chips-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px;}
   .chip-group h4{font-family:'Source Serif 4',serif;font-size:1rem;color:var(--guinda-deep);margin:0 0 12px;}
   .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
@@ -373,29 +379,25 @@
   </section>
 
   <!-- DATOS RÁPIDOS -->
-  <section>
+  <section class="section-alt">
     <div class="wrap">
       <div class="section-head">
         <div class="tag">El acervo en cifras</div>
         <h2>Lo que resguardan el Archivo y la Biblioteca</h2>
       </div>
-      <div class="info-grid info-grid-4">
-        <div class="info-card">
-          <div class="num">240 mil</div>
-          <div class="cap">expedientes de archivo —manuscritos, mecanoescritos, mapas, planos, croquis y fotografías— sobre los usos sociales del agua en México (1558–2025).</div>
-        </div>
-        <div class="info-card">
-          <div class="num">30 mil</div>
-          <div class="cap">referencias bibliográficas y hemerográficas de la Biblioteca Central del Agua, desde la Comisión Nacional de Irrigación hasta la actual CONAGUA.</div>
-        </div>
-        <div class="info-card">
-          <div class="num">1910</div>
-          <div class="cap">año de inauguración del inmueble histórico que hoy alberga al AHyBCA, diseñado por el arquitecto Carlos Herrera para las fiestas del centenario de la Independencia.</div>
-        </div>
-        <div class="info-card">
-          <div class="num">1994</div>
-          <div class="cap">año en que se incorpora el acervo del Archivo Histórico a este inmueble; la Biblioteca Central del Agua se instaló aquí en 1986.</div>
-        </div>
+      <div class="cifras-grid">
+        <figure class="cifra-item">
+          <img src="assets/cifra-240mil-expedientes.jpg" alt="240 mil expedientes de archivo sobre los usos sociales del agua en México, 1558–2025">
+        </figure>
+        <figure class="cifra-item">
+          <img src="assets/cifra-30mil-referencias.jpg" alt="30 mil referencias bibliográficas y hemerográficas de la Biblioteca Central del Agua">
+        </figure>
+        <figure class="cifra-item">
+          <img src="assets/cifra-1910-inmueble.jpg" alt="1910, año de inauguración del inmueble histórico que hoy alberga al AHyBCA">
+        </figure>
+        <figure class="cifra-item">
+          <img src="assets/cifra-1994-incorporacion.jpg" alt="1994, año en que se incorpora el acervo del Archivo Histórico a este inmueble">
+        </figure>
       </div>
 
       <div class="chips-grid">
