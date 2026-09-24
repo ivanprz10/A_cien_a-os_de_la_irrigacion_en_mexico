@@ -4,173 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entre ríos y cuencas, de generación en generación · Archivo Histórico y Biblioteca Central del Agua · CONAGUA</title>
+<link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#F7F4EF;
-    --paper-deep:#EFE9DE;
-    --ink:#241417;
-    --guinda:#7C1D34;
-    --guinda-deep:#5A1526;
-    --guinda-pale:#F1DEE2;
-    --gold:#A9793A;
-    --gold-pale:#EADFC4;
-    --line:#DCD2C0;
-    --white:#FFFFFF;
-    --radius:2px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans', -apple-system, sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
-  h1,h2,h3,.serif{font-family:'Source Serif 4', Georgia, serif;font-weight:600;color:var(--guinda-deep);margin:0;}
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-
-  .skip-link{position:absolute;left:-999px;top:auto;background:var(--guinda-deep);color:var(--white);padding:10px 16px;z-index:100;}
-  .skip-link:focus{left:16px;top:16px;}
-  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
-
-  .gob-bar{background:#1B1B1B;color:#E7E1D8;font-size:.78rem;padding:7px 0;}
-  .gob-bar .wrap{display:flex;align-items:center;gap:8px;}
-  .gob-bar .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block;}
-
-  header.site{background:var(--guinda);color:var(--white);border-bottom:4px solid var(--gold);}
-  .site-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:24px;flex-wrap:wrap;}
-  .brand{display:flex;flex-direction:column;text-decoration:none;color:var(--white);}
-  .brand .dep{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-pale);}
-  .brand .name{font-family:'Source Serif 4',serif;font-size:1.25rem;font-weight:600;margin-top:2px;}
-  nav.crumbs{font-size:.85rem;color:var(--guinda-pale);text-align:right;}
-  nav.crumbs a{text-decoration:none;color:var(--guinda-pale);border-bottom:1px solid transparent;}
-  nav.crumbs a:hover{border-bottom-color:var(--gold);}
-  nav.crumbs .sep{margin:0 8px;color:var(--gold);}
-
-  .hero{position:relative;background:radial-gradient(ellipse at 18% 20%, rgba(169,121,58,.16), transparent 55%),var(--paper-deep);border-bottom:1px solid var(--line);overflow:hidden;}
-  .hero-inner{display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px;padding:64px 0 48px;}
-  .hero-eyebrow{font-size:.9rem;color:var(--guinda);margin-bottom:14px;font-weight:600;}
-  .hero h1{font-size:clamp(1.9rem,4vw,3.05rem);line-height:1.12;max-width:17ch;}
-  .hero .subtitle{font-family:'Source Serif 4',serif;font-style:italic;font-size:1.15rem;color:var(--guinda);margin-top:8px;}
-  .hero p.lede{max-width:56ch;margin-top:18px;font-size:1.05rem;color:#4a3a3d;}
-  .hero-num{font-family:'Source Serif 4',serif;font-size:clamp(5rem,14vw,10.5rem);line-height:.8;color:var(--guinda);opacity:.13;font-weight:700;user-select:none;white-space:nowrap;}
-  .hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line);}
-  .meta-item{min-width:150px;}
-  .meta-item .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;}
-  .meta-item .value{font-size:1.02rem;margin-top:4px;color:var(--ink);font-weight:500;}
-
-  .cta-row{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:var(--radius);font-weight:600;text-decoration:none;font-size:.98rem;border:1.5px solid transparent;cursor:pointer;}
-  .btn-primary{background:var(--guinda);color:var(--white);}
-  .btn-primary:hover{background:var(--guinda-deep);}
-  .btn-ghost{background:transparent;color:var(--guinda);border-color:var(--guinda);}
-  .btn-ghost:hover{background:var(--guinda-pale);}
-
-  section{padding:56px 0;}
-  .section-head{max-width:64ch;margin-bottom:32px;}
-  .section-head .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;}
-  .section-head h2{font-size:1.7rem;margin-top:8px;}
-  .section-alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-
-  .lead-block p{max-width:70ch;color:#3c2c2f;}
-
-  .about-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:40px;align-items:start;}
-  .about-figure{border:1px solid var(--line);background:var(--white);padding:14px;}
-  .about-figure img{width:100%;height:auto;}
-  .about-figure figcaption{font-size:.82rem;color:#6b5a5c;margin-top:10px;line-height:1.45;}
-  @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
-
-  .flagship{display:grid;grid-template-columns:.75fr 1.25fr;gap:0;border:1px solid var(--line);background:var(--white);}
-  .flagship-date{background:var(--guinda);color:var(--white);padding:36px 30px;display:flex;flex-direction:column;justify-content:center;gap:10px;}
-  .flagship-date .day{font-family:'Source Serif 4',serif;font-size:3.2rem;line-height:1;}
-  .flagship-date .month{font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-pale);}
-  .flagship-date .tag2{margin-top:14px;font-size:.85rem;color:var(--guinda-pale);border-top:1px solid rgba(255,255,255,.2);padding-top:14px;}
-  .flagship-body{padding:32px 34px;}
-  .flagship-body h3{font-size:1.3rem;margin-bottom:12px;}
-  .flagship-body p{color:#4a3a3d;margin:0 0 14px;}
-
-  .schedule{margin-top:6px;border-top:1px solid var(--line);}
-  .s-item{display:grid;grid-template-columns:100px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);}
-  .s-item:last-child{border-bottom:none;}
-  .s-time{font-size:.82rem;font-weight:700;color:var(--guinda);white-space:nowrap;}
-  .s-body h4{font-family:'Source Serif 4',serif;font-size:1rem;color:var(--guinda-deep);margin:0 0 4px;}
-  .s-body p{margin:0;font-size:.88rem;color:#4a3a3d;}
-  .s-body ul{margin:6px 0 0;padding-left:18px;font-size:.88rem;color:#4a3a3d;}
-  .s-body li{margin-bottom:4px;}
-
-  @media (max-width:760px){
-    .flagship{grid-template-columns:1fr;}
-    .hero-inner{grid-template-columns:1fr;}
-    .hero-num{opacity:.10;font-size:5rem;}
-    .s-item{grid-template-columns:1fr;gap:4px;}
-  }
-
-  .timeline{border-left:2px solid var(--guinda-pale);margin-left:8px;padding-left:0;}
-  .t-item{position:relative;padding:0 0 26px 30px;}
-  .t-item:last-child{padding-bottom:0;}
-  .t-item::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--white);box-shadow:0 0 0 2px var(--guinda-pale);}
-  .t-item h4{font-family:'Source Serif 4',serif;font-size:1.05rem;color:var(--guinda-deep);margin:0 0 6px;}
-  .t-item p{margin:0;color:#4a3a3d;font-size:.92rem;max-width:64ch;}
-  .t-item .t-badge{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);font-weight:700;margin-bottom:4px;}
-
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  figure.g-item{margin:0;background:var(--white);border:1px solid var(--line);}
-  figure.g-item .g-img{aspect-ratio:4/3;overflow:hidden;background:#000;}
-  figure.g-item img{width:100%;height:100%;object-fit:cover;}
-  figure.g-item figcaption{padding:14px 16px;font-size:.85rem;color:#4a3a3d;}
-  figure.g-item.g-wide{grid-column:span 2;}
-  figure.g-item.g-wide .g-img{aspect-ratio:16/9;}
-  @media (max-width:800px){.gallery{grid-template-columns:1fr;}figure.g-item.g-wide{grid-column:span 1;}}
-
-  .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .info-grid-4{grid-template-columns:repeat(4,1fr);}
-  .info-card{background:var(--white);border:1px solid var(--line);padding:24px;}
-  .info-card .num{font-family:'Source Serif 4',serif;font-size:2rem;color:var(--guinda);}
-  .info-card .cap{font-size:.85rem;color:#5a4a4c;margin-top:6px;}
-  @media (max-width:900px){.info-grid-4{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:760px){.info-grid{grid-template-columns:1fr;}.info-grid-4{grid-template-columns:1fr;}}
-
-  .cifras-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .cifra-item{margin:0;background:var(--white);border:1px solid var(--line);padding:10px;}
-  .cifra-item img{width:100%;height:auto;display:block;}
-  @media (max-width:900px){.cifras-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:520px){.cifras-grid{grid-template-columns:1fr;}}
-
-  .chips-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px;}
-  .chip-group h4{font-family:'Source Serif 4',serif;font-size:1rem;color:var(--guinda-deep);margin:0 0 12px;}
-  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
-  .chip{background:var(--paper-deep);border:1px solid var(--line);padding:6px 12px;font-size:.8rem;color:var(--ink);border-radius:2px;}
-  @media (max-width:760px){.chips-grid{grid-template-columns:1fr;}}
-
-  .registro{background:var(--guinda);color:var(--white);text-align:center;padding:60px 24px;}
-  .registro h2{color:var(--white);font-size:1.9rem;max-width:28ch;margin:0 auto;}
-  .registro p{max-width:54ch;margin:16px auto 0;color:var(--guinda-pale);}
-  .registro .btn-primary{background:var(--gold);color:var(--guinda-deep);margin-top:26px;}
-  .registro .btn-primary:hover{background:var(--gold-pale);}
-  .registro .fineprint{margin-top:20px;font-size:.8rem;color:var(--guinda-pale);max-width:54ch;margin-left:auto;margin-right:auto;}
-  .registro .contact-line{margin-top:10px;font-size:.85rem;color:var(--gold-pale);}
-
-  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
-  .loc-grid iframe{width:100%;height:320px;border:1px solid var(--line);}
-  @media (max-width:760px){.loc-grid{grid-template-columns:1fr;}}
-  .loc-text .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;}
-  .loc-text h3{margin-top:8px;font-size:1.3rem;}
-  .loc-text p{color:#4a3a3d;}
-  .loc-text .access-note{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);font-size:.85rem;color:#6b5a5c;}
-
-  .cierre{padding:60px 0;background:var(--paper-deep);border-top:1px solid var(--line);}
-  .cierre-frame{max-width:640px;margin:0 auto;background:var(--white);border:1px solid var(--line);padding:16px;}
-  .cierre-frame img{width:100%;height:auto;}
-
-  footer.site{background:var(--ink);color:#d9cdd0;padding:48px 0 24px;}
-  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.12);}
-  footer.site h4{color:var(--gold-pale);font-family:'Source Serif 4',serif;font-size:1rem;margin-bottom:14px;}
-  footer.site ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
-  footer.site a{color:#d9cdd0;text-decoration:none;font-size:.92rem;}
-  footer.site a:hover{color:var(--gold-pale);}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;font-size:.8rem;color:#a08f92;flex-wrap:wrap;gap:12px;}
-  @media (max-width:760px){.footer-grid{grid-template-columns:1fr;}}
-</style>
 </head>
 <body>
 
@@ -199,7 +36,7 @@
   <section class="hero">
     <div class="wrap hero-inner">
       <div>
-        <div class="hero-eyebrow">FestivAl MANAQUE · Red de Bibliotecas y Archivos del Centro Histórico de la Ciudad de México</div>
+        <div class="hero-eyebrow">FestivAlMANAQUE · Red de Bibliotecas y Archivos del Centro Histórico de la Ciudad de México</div>
         <h1>Entre ríos y cuencas, de generación en generación</h1>
         <div class="subtitle">Un siglo de historia de las aguas nacionales</div>
         <p class="lede">A 100 años de la Comisión Nacional de Irrigación, el Archivo Histórico y Biblioteca Central del Agua conmemora un siglo de gestión, infraestructura y desarrollo hídrico en el país con una exposición fotográfica y un ciclo de pláticas semanales sobre la trayectoria y los retos institucionales en la transformación de la gestión del agua.</p>
@@ -210,11 +47,11 @@
       <div class="hero-meta">
         <div class="meta-item">
           <div class="label">Duración</div>
-          <div class="value">23 de octubre – 18 de diciembre, 2026</div>
+          <div class="value">23 de octubre – 4 de diciembre, 2026</div>
         </div>
         <div class="meta-item">
           <div class="label">Apertura pública</div>
-          <div class="value">Viernes 23 de octubre, 15:30 h</div>
+          <div class="value">Viernes 23 de octubre, 11:00 h</div>
         </div>
         <div class="meta-item">
           <div class="label">Sede</div>
@@ -240,7 +77,7 @@
           <div class="tag">Sobre el evento</div>
           <h2>Cien años de historia, contados desde el archivo</h2>
         </div>
-        <p>El Archivo Histórico y Biblioteca Central del Agua (AHyBCA) de la CONAGUA, en el marco de <strong>FestivAl MANAQUE</strong> —festival organizado por la Red de Bibliotecas y Archivos del Centro Histórico de la Ciudad de México—, conmemora el centenario de la Comisión Nacional de Irrigación con este encuentro. El objetivo es visibilizar y reconocer un siglo de gestión, infraestructura y desarrollo hídrico en el país, a través de una exposición fotográfica y un ciclo de pláticas semanales sobre la trayectoria y los retos institucionales en la transformación de la gestión del agua, con base en el acervo del AHyBCA.</p>
+        <p>El Archivo Histórico y Biblioteca Central del Agua (AHyBCA) de la Comisión Nacional del Agua (Conagua), en el marco de <strong>FestivAlMANAQUE</strong> —festival organizado por la Red de Bibliotecas y Archivos del Centro Histórico de la Ciudad de México—, conmemora el centenario de la Comisión Nacional de Irrigación con este encuentro. El objetivo es visibilizar y reconocer un siglo de gestión, infraestructura y desarrollo hídrico en el país, a través de una exposición fotográfica y un ciclo de pláticas semanales sobre la trayectoria y los retos institucionales en la transformación de la gestión del agua, con base en el acervo del AHyBCA.</p>
         <p>Ese acervo resguarda la memoria histórica sobre la gestión, administración y manejo de los recursos hídricos e hidráulicos de México, generada por la CONAGUA y las instituciones que le antecedieron, con una temporalidad de 1558 a 2015: más de 240 mil expedientes organizados en siete fondos documentales y más de 30 mil referencias bibliográficas y hemerográficas en seis colecciones, resguardadas en un inmueble emblemático de finales del siglo&nbsp;XIX que albergó a la extinta Comisión Nacional de Irrigación, la SRH y la SARH.</p>
       </div>
       <figure class="about-figure">
@@ -267,39 +104,39 @@
         </div>
         <div class="flagship-body">
           <h3>Bienvenida, ciclo de pláticas e inauguración de la exposición</h3>
-          <p>Sala de Consulta del AHyBCA — 15:30 a 17:30 horas.</p>
+          <p>Sala de Consulta del AHyBCA — 11:00 a 13:00 horas.</p>
 
           <div class="schedule">
             <div class="s-item">
-              <div class="s-time">15:30–15:40</div>
+              <div class="s-time">1</div>
               <div class="s-body">
                 <h4>Bienvenida</h4>
-                <p>Lic. Anel Oceguera Vergara, Subgerenta de Relaciones Interinstitucionales y Cultura del Agua (CONAGUA), y representante de la Red de Bibliotecas y Archivos del Centro Histórico de la Ciudad de México. Indicaciones de protección civil.</p>
+                <p>Anel Oceguera Vergara, Subgerenta de Relaciones Interinstitucionales y Cultura del Agua (CONAGUA), y representante de la Red de Bibliotecas y Archivos del Centro Histórico de la Ciudad de México.</p>
               </div>
             </div>
             <div class="s-item">
-              <div class="s-time">15:40–16:40</div>
+              <div class="s-time">2</div>
               <div class="s-body">
                 <h4>Ciclo de pláticas</h4>
                 <ul>
-                  <li>“De los canales de tierra a los archivos digitales: cien años de política hídrica en México, 1926–2026” — Olga Manuel Castillo (20 min)</li>
-                  <li>“El origen de la infraestructura hidráulica: la Comisión Nacional de Irrigación, 1926–1946” — José Guadalupe Rangel Mandujano (20 min)</li>
-                  <li>“Conociendo el patrimonio documental del agua: fondos y colecciones del AHyBCA” — Jessica Erisbeth Ríos Alvarado / José Roberto Benítez Camacho (20 min)</li>
+                  <li>“Conociendo el patrimonio documental del agua: fondos y colecciones del AHyBCA” — Jessica Erisbeth Ríos Alvarado / José Roberto Benítez Camacho</li>
+                  <li>“De los canales de tierra a los archivos digitales: cien años de política hídrica en México, 1926–2026” — Olga Manuel Castillo</li>
+                  <li>“El origen de la infraestructura hidráulica: la Comisión Nacional de Irrigación, 1926–1946” — José Guadalupe Rangel Mandujano</li>
                 </ul>
               </div>
             </div>
             <div class="s-item">
-              <div class="s-time">16:40–17:10</div>
+              <div class="s-time">3</div>
               <div class="s-body">
-                <h4>Exposición fotográfica</h4>
-                <p>Corte de listón inaugural, explicación de la exposición y foto grupal.</p>
+                <h4>Exposición fotográfica “A 100 años de la Comisión Nacional de Irrigación”</h4>
+                <p>Corte de listón inaugural.</p>
               </div>
             </div>
             <div class="s-item">
-              <div class="s-time">17:10–17:30</div>
+              <div class="s-time">4</div>
               <div class="s-body">
-                <h4>Conclusiones y cierre</h4>
-                <p>Mtra. Olga Manuel Castillo, Jefa de Proyecto y Coordinadora del AHyBCA.</p>
+                <h4>Cierre del evento</h4>
+                <p>Olga Manuel Castillo, Jefa de Proyecto y Coordinadora del AHyBCA.</p>
               </div>
             </div>
           </div>
@@ -309,46 +146,38 @@
   </section>
 
   <!-- CICLO SEMANAL -->
-  <section>
+  <section class="section-tone">
     <div class="wrap">
       <div class="section-head">
         <div class="tag">Continuidad</div>
         <h2>Ciclo de pláticas semanales</h2>
-        <p style="margin-top:10px;color:#5a4a4c;font-size:.98rem;">Tras la apertura del 23 de octubre, el ciclo continúa cada viernes en la Sala de Consulta hasta cerrar la conmemoración el 18 de diciembre.</p>
+        <p style="margin-top:10px;color:#5a4a4c;font-size:.98rem;text-align:justify;">Tras la apertura del 23 de octubre, el ciclo continúa cada viernes en la Sala de Consulta del AHyBCA, de 11:00 a 13:00 horas, hasta cerrar la conmemoración el 4 de diciembre.</p>
       </div>
 
       <div class="timeline">
         <div class="t-item">
           <span class="t-badge">30 de octubre</span>
-          <p>“La Comisión del río del Papaloapan: política de desarrollo por cuencas, 1946–1984” — Jessica Erisbeth Ríos Alvarado (30 min) · “Del surco a la gota: evolución de los sistemas de riego en México” — Eva Olivo Zavala (30 min)</p>
+          <p>“La huella de Adolfo Orive Alba en la CNI y SRH” — María Gabriela Vilchis Bernal - AHyBCA · “La Comisión del Río Papaloapan: política de desarrollo por cuencas, 1946–1984” — Jessica Erisbeth Ríos Alvarado - AHyBCA</p>
         </div>
         <div class="t-item">
           <span class="t-badge">6 de noviembre</span>
-          <p>“Reconocimiento Memoria del Mundo de la UNESCO” — Olga Manuel Castillo (30 min) · “Los inicios de la cooperación hídrica internacional en la CNI: transferencia tecnológica, fortalecimiento de capacidades y negociación transfronteriza” — Nohemí Flores González (30 min)</p>
+          <p>“Memoria del Mundo de México-UNESCO: retos del AHyBCA” — Olga Manuel Castillo - AHyBCA · “Los inicios de la cooperación hídrica internacional en la CNI: transferencia tecnológica, fortalecimiento de capacidades y negociación transfronteriza” — Nohemí Flores González - AHyBCA</p>
         </div>
         <div class="t-item">
           <span class="t-badge">13 de noviembre</span>
-          <p>“De la CNI a la Conagua: evolución de las revistas de divulgación, 1926–2025” — José Roberto Benítez Camacho (30 min) · “Mujeres y gestión hídrica: un análisis hemerográfico del Boletín Archivo Histórico del Agua, 1994–2008” — Jesús Gatica Santiago (30 min)</p>
+          <p>“Del surco a la gota: evolución de los sistemas de riego en México” — Eva Olivo Zavala - AHyBCA · “Mujeres y gestión hídrica: un análisis hemerográfico del Boletín del Archivo Histórico del Agua, 1994–2008” — Jesús Garrido Gática - AHyBCA</p>
         </div>
         <div class="t-item">
           <span class="t-badge">20 de noviembre</span>
-          <p>“Organización y conservación de documentos” — Jessica Erisbeth Ríos Alvarado / José Roberto Benítez Camacho (30 min) · Taller de conservación de documentos históricos — Jessica Erisbeth Ríos Alvarado (1:30 h)</p>
+          <p>“De la CNI a la CONAGUA: evolución de las revistas de divulgación, 1926–2025” — José Roberto Benítez Camacho - AHyBCA · Reseña de libro (título por definir) — Alejandro Jiménez Serna - AHyBCA</p>
         </div>
         <div class="t-item">
           <span class="t-badge">27 de noviembre</span>
-          <p>“La huella de Adolfo Orive Alba en la CNI y SRH” — María Gabriela Vilchis Bernal · Reseña de libro — ponente por definir</p>
+          <p>“Los expedientes hablan: los aprovechamientos del Río Magdalena, siglos XVII–XIX” — José Guadalupe Mandujano - AHyBCA · “Las raíces del agua: importancia de las muestras de suelo en los proyectos de la Comisión Nacional de Irrigación, 1926–1946” — Alejandro Jiménez Serna - AHyBCA</p>
         </div>
         <div class="t-item">
-          <span class="t-badge">4 de diciembre</span>
-          <p>“Las raíces del agua: importancia de las muestras de suelo en los proyectos de la Comisión Nacional de Irrigación, 1926–1946” — Alejandro Jiménez Serna · “Patrimonio de la investigación: resguardo de tesis en la Biblioteca Central del Agua” — Alejandro Jiménez Serna</p>
-        </div>
-        <div class="t-item">
-          <span class="t-badge">11 de diciembre</span>
-          <p>“Los expedientes hablan: los aprovechamientos del Río Magdalena, siglos XVII–XIX” — José Guadalupe Rangel Mandujano · Información sobre los servicios que ofrece el AHyBCA — Olga Manuel Castillo</p>
-        </div>
-        <div class="t-item">
-          <span class="t-badge">18 de diciembre · Cierre del ciclo</span>
-          <p>“Custodia de la memoria: logros del AHyBCA sobre la CNI” — Olga Manuel Castillo · “Memoria y Cultura del Agua: reflexiones al cierre del ciclo” — Anel Oceguera Vergara</p>
+          <span class="t-badge">4 de diciembre · Clausura del ciclo</span>
+          <p>“Patrimonio y cultura del agua: reflexiones al cierre del ciclo” — Anel Oceguera Vergara</p>
         </div>
       </div>
     </div>
@@ -379,7 +208,7 @@
   </section>
 
   <!-- DATOS RÁPIDOS -->
-  <section class="section-alt">
+  <section class="section-tone">
     <div class="wrap">
       <div class="section-head">
         <div class="tag">El acervo en cifras</div>
@@ -387,16 +216,16 @@
       </div>
       <div class="cifras-grid">
         <figure class="cifra-item">
-          <img src="assets/cifra-240mil-expedientes.jpg" alt="240 mil expedientes de archivo sobre los usos sociales del agua en México, 1558–2025">
+          <img src="assets/cifra-240mil-expedientes.png" alt="Más de 240 mil expedientes en 7 fondos documentales">
         </figure>
         <figure class="cifra-item">
-          <img src="assets/cifra-30mil-referencias.jpg" alt="30 mil referencias bibliográficas y hemerográficas de la Biblioteca Central del Agua">
+          <img src="assets/cifra-15mil-referencias-estudios.png" alt="Más de 15 mil referencias bibliográficas y hemerográficas y más de 15 mil estudios, ambos distribuidos en 6 colecciones de la Biblioteca Central del Agua">
         </figure>
         <figure class="cifra-item">
-          <img src="assets/cifra-1910-inmueble.jpg" alt="1910, año de inauguración del inmueble histórico que hoy alberga al AHyBCA">
+          <img src="assets/cifra-1910-inmueble.png" alt="El acervo se resguarda en dos edificios; el primero, de finales de 1896, se inauguró en 1910 con motivo del Centenario de la Independencia de México">
         </figure>
         <figure class="cifra-item">
-          <img src="assets/cifra-1994-incorporacion.jpg" alt="1994, año en que se incorpora el acervo del Archivo Histórico a este inmueble">
+          <img src="assets/cifra-1926-1940-sede.png" alt="En 1926 el primer edificio albergó a la Comisión Nacional de Irrigación; el segundo edificio es de finales de 1940. Ambos albergaron a la SRH, la SARH y la Conagua, y desde 1986 y 1994 resguardan el acervo del AHyBCA">
         </figure>
       </div>
 
@@ -429,7 +258,7 @@
   </section>
 
   <!-- REGISTRO -->
-  <section class="registro" id="registro">
+  <section class="section-alt registro" id="registro">
     <div class="wrap">
       <h2>Reserva tu lugar</h2>
       <p>El cupo es limitado a 30 personas por sesión. Regístrate a través del formulario oficial para confirmar tu asistencia a la apertura del 23 de octubre o a cualquiera de las pláticas semanales.</p>
@@ -441,7 +270,7 @@
   </section>
 
   <!-- UBICACIÓN -->
-  <section>
+  <section class="section-tone">
     <div class="wrap loc-grid">
       <div class="loc-text">
         <div class="label">¿Dónde nos vemos?</div>
@@ -462,7 +291,7 @@
   </section>
 
   <!-- CIERRE -->
-  <section class="cierre">
+  <section class="section-alt cierre">
     <div class="wrap">
       <div class="cierre-frame">
         <img src="assets/cierre-gracias.jpg" alt="Mensaje de agradecimiento al Archivo Histórico y Biblioteca Central del Agua por su colaboración en preservar la memoria del agua en México">
